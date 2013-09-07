@@ -6,6 +6,7 @@
 #include <ctime>
 using namespace std;
 
+
 struct MyComparator
 {
     const vector<int> & value_vector;
