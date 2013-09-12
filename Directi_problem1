@@ -1,0 +1,96 @@
+#include<algorithm>
+#include<stack>
+#include<string>
+#include<cstdio>
+#include<cstdlib>
+using namespace std;
+int main()
+{
+	stack <char> S;
+	
+ 	string p = "()";  //1+2
+	string::iterator i;
+	char prev;
+	char temp;
+	int temp1,temp2;
+
+	for(i=p.begin();i<p.end();++i)
+	{
+        if((*i)=='(' && (S.size()==0))
+		{
+			S.push('(');
+			S.push('0');
+			prev = '0';
+		}
+		else if((*i)=='(' && S.size()!=0)
+		{
+			//S.top() = S.top()-1;
+			temp = S.top();
+			S.pop();
+			temp=temp-1;
+			S.push(temp);
+			S.push(prev);
+			S.push('(');
+		}
+		else if((*i)==')')
+		{
+			temp1 = 0;
+			while(S.top()!='(')
+			{
+				temp1 = temp1+S.top()-'0';
+				S.pop();
+			}
+
+			//temp1 = S.top()-'0';
+			S.pop();
+			if(S.size()!=0)
+			    {
+					temp2 = S.top()-'0';
+					S.pop();
+					S.push(temp1*temp2 + '0');
+				}
+			else S.push(temp1+'0');
+		}
+		else
+		{
+			//S.top() = S.top() + 1;
+  			if(!(S.empty()))
+			{
+				temp = S.top();
+				if( S.top() !='(')
+				{
+                    S.pop();
+					temp=temp+1;
+					S.push(temp);
+					prev = *i;
+				}
+				else
+				{
+					S.push('1');
+					prev = *i;
+				}
+			}
+			else
+			{
+				S.push('1');
+				prev = *i;
+			}
+		}
+//	for(stack<char> dump = S;!dump.empty();dump.pop()){
+//		printf("%c\t",dump.top());
+//	}
+//	printf("\n");
+
+	}
+	//printf("%d\n",S.size());
+	int ans = 0;
+	while(!(S.empty()))
+	{
+		ans = ans + S.top()-'0';
+		S.pop();
+	}
+
+	printf("ANSWER ---- %d\n",ans);
+
+	system("PAUSE");
+}
