@@ -122,40 +122,29 @@ bestpoints closest(point* a, int n){
 }
 
 int main(){
-<<<<<<< HEAD
 	//point P[] = {{2,3},{12,30},{40,50},{5,1},{12,10},{3,4}};
 	//int n = sizeof(P)/sizeof(P[0]);
-=======
->>>>>>> fb9cabb0c42e3f6de50e8a0f73f52728cfc91135
 
 	int n;
 	scanf("%d",&n);
 	point P[n];
-<<<<<<< HEAD
 	//point Pcopy[n];
-=======
 
->>>>>>> fb9cabb0c42e3f6de50e8a0f73f52728cfc91135
 	for(int i=0;i<n;i++)
 	{
         P[i].index = i;
 		scanf("%d %d",&P[i].x,&P[i].y);
-<<<<<<< HEAD
 		//printf("%d %d\n",P[i].x,P[i].y);
 		
 	}
 
 	//printf("dist-------%lf\n",distance(P[0],P[1]));
-=======
 
-	}
 
->>>>>>> fb9cabb0c42e3f6de50e8a0f73f52728cfc91135
 
 	bestpoints p = closest(P,n);
 	int index1=p.index1;
 	int index2=p.index2;
-<<<<<<< HEAD
 //	for(int i=0;i<n;i++)
 //	{
 //		if(Pcopy[i].x==p.x1 && Pcopy[i].y==p.y1 && index1==n+1)
@@ -164,8 +153,6 @@ int main(){
 //		    index2=i;
 //		else continue;
 //	}
-=======
->>>>>>> fb9cabb0c42e3f6de50e8a0f73f52728cfc91135
 
 
 	if(index1<index2)
@@ -175,10 +162,6 @@ int main(){
 
 //printf("CLOSEST DISTANCE --- %0.6f    POINT1(%d,%d)   POINT2(%d,%d) INDICES %d %d \n",p.min,p.x1,p.y1,p.x2,p.y2,index1,index2 );
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fb9cabb0c42e3f6de50e8a0f73f52728cfc91135
 system("PAUSE");
 	return 0;
 }
