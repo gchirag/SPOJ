@@ -32,6 +32,7 @@ int countsets(int* a,int n)
 
 int main()
 {
+	
 	int t;
 	scanf("%d",&t);
 	int n;
