@@ -1,0 +1,40 @@
+/*
+Simpler version of GONESORT
+Here you can only keep things on top and not at the end
+It boils down to finding longest length of the chain of elements just smaller than the largest element which are to the left in the original array
+*/
+
+#include<cstdio>
+#include<cstdlib>
+using namespace std;
+
+int main()
+{
+	int n,x;
+	scanf("%d",&n);
+	//int* arr = (int*)malloc(sizeof(int)*n);
+	int* helper_arr = (int*)malloc(sizeof(int)*n);
+	
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&x);
+		helper_arr[x-1]=i;
+	}
+	
+	int count=1;
+	int i=n-1;
+	while(i>=0)
+	{
+		if(helper_arr[i]>helper_arr[i-1])
+		{
+			count++;
+			i--;
+		}
+		else break;
+	}
+
+	free(helper_arr);
+	printf("%d\n",n-count);
+	
+	return 0;
+}
