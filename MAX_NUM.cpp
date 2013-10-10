@@ -1,3 +1,11 @@
+/*
+Deleting k digits from n -- output the largest possible answer
+
+Used stack --> push elements of array continuously while deleting smaller elements till possible length
+That is, it is not possible to delete an element from the stack if the remaining elements of the array and the current stack size < digits(n)-k
+Because eventually we want to form an (digits(n) - k) digit number
+*/
+
 #include<cstdio>
 #include<cstdlib>
 #include<stack>
