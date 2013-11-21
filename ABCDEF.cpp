@@ -58,6 +58,7 @@ int main()
 //	printf("\n");
 
 
+
 	int* arr4 = (int*)malloc(sizeof(int)*n*n*n);
 	len=0;
 	for(int i=0;i<n;i++)
