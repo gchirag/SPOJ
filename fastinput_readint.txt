@@ -1,0 +1,22 @@
+int read_int(){
+	char r;
+	bool start=false,neg=false;
+	int ret=0;
+	while(true){
+		r=getchar_unlocked();
+		if((r-'0'<0 || r-'0'>9) && r!='-' && !start){
+			continue;
+		}
+		if((r-'0'<0 || r-'0'>9) && r!='-' && start){
+			break;
+		}
+		if(start)ret*=10;
+		start=true;
+		if(r=='-')neg=true;
+		else ret+=r-'0';
+	}
+	if(!neg)
+		return ret;
+	else
+		return -ret;
+}
